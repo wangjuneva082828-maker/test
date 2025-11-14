@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>感谢 — 已收到你的申请</title>
+    <meta name="description" content="感谢您的申请，我们会尽快联系您。" />
+    <style>
+      :root{
+        --bg1: #0f172a;
+        --bg2: #06202a;
+        --accent: #22c55e;
+        --muted: #94a3b8;
+        --card: rgba(255,255,255,0.04);
+      }
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+        color:#e6eef6;display:flex;align-items:center;justify-content:center;padding:32px;
+      }
+      .card{
+        width:100%;max-width:920px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+        border-radius:16px;padding:40px;box-shadow: 0 10px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);
+        display:flex;gap:32px;align-items:center;
+      }
+      .visual{flex:0 0 160px;display:flex;align-items:center;justify-content:center}
+      .bubble{
+        width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg, rgba(34,197,94,0.18), rgba(16,185,129,0.12));
+        display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 20px rgba(34,197,94,0.08) inset, 0 6px 20px rgba(2,6,23,0.6);
+      }
+      svg{width:78px;height:78px}
+      .content{flex:1}
+      h1{font-size:28px;margin:0 0 8px;color:#ffffff}
+      p.lead{margin:0 0 18px;color:var(--muted);line-height:1.6}
+      .meta{display:flex;gap:12px;flex-wrap:wrap}
+      .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dfffe0;text-decoration:none;font-weight:600}
+      .btn.primary{background:linear-gradient(90deg,var(--accent),#16a34a);border:none;color:#04281b}
+      .links{margin-top:18px;display:flex;gap:10px}
+      .foot{margin-top:18px;color:var(--muted);font-size:13px}
+
+      /* responsive */
+      @media (max-width:720px){
+        .card{flex-direction:column;text-align:center;padding:28px}
+        .visual{order:-1}
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main">
+      <div class="visual" aria-hidden="true">
+        <div class="bubble">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <circle cx="12" cy="12" r="11" stroke="rgba(34,197,94,0.9)" stroke-width="1.6" fill="rgba(34,197,94,0.06)"/>
+            <path d="M7.5 12.5L10.2 15.2L16.5 8.9" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="content">
+        <h1>感谢您的申请！我们已收到。</h1>
+        <p class="lead">销售团队会在1-2个工作日内与您联系。请保持手机畅通并注意查收邮件。您也可以通过下面的方式继续操作或返回首页。</p>
+
+        <div class="meta">
+          <a class="btn primary" href="/" title="返回首页">返回首页</a>
+          <a class="btn" href="mailto:sales@yourdomain.com">联系销售</a>
+          <a class="btn" href="#more">查看详情</a>
+        </div>
+
+        <div class="foot">如果你在24小时内未收到回复，请通过 <a href="mailto:support@yourdomain.com" style="color:inherit;text-decoration:underline">support@yourdomain.com</a> 联系我们。</div>
+      </div>
+    </main>
+
+    <section id="more" style="max-width:920px;margin:20px auto 0;padding:0 24px;color:var(--muted);font-size:14px;">
+      <p>此页面为演示用的Thank You页面。要把它发布到 GitHub Pages，请将仓库的 Pages 源设置为 <strong>main / docs</strong>，并把本文件放在仓库的 `docs/` 目录下。</p>
+    </section>
+  </body>
+</html>
