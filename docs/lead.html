@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>联系我们 — 申请表</title>
+    <meta name="description" content="请填写下列表格，我们的销售团队将尽快与您联系。">
+    <style>
+      :root{--accent:#16a34a;--bg:#f7fafc;--card:#ffffff;--muted:#64748b}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#f8fafc,#eef2ff);color:#0f172a;padding:24px}
+      .container{max-width:920px;margin:28px auto;background:var(--card);border-radius:12px;padding:28px;box-shadow:0 6px 24px rgba(15,23,42,0.08)}
+      h1{margin:0 0 6px;font-size:22px}
+      p.lead{margin:0 0 18px;color:var(--muted)}
+      form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      label{display:block;font-size:13px;color:#0f172a;margin-bottom:6px}
+      input[type=text],input[type=email],select,textarea{width:100%;padding:10px;border:1px solid #e6eef6;border-radius:8px;background:#fff}
+      textarea{min-height:110px;resize:vertical}
+      .full{grid-column:1 / -1}
+      .actions{display:flex;gap:10px;align-items:center;margin-top:12px}
+      .btn{background:var(--accent);color:#04281b;padding:10px 14px;border-radius:8px;border:none;font-weight:600;cursor:pointer}
+      .btn.secondary{background:transparent;border:1px solid #cbd5e1;color:#0f172a}
+      .note{font-size:13px;color:var(--muted)}
+      @media (max-width:720px){form{grid-template-columns:1fr} .container{padding:18px}}
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>获取更多信息</h1>
+      <p class="lead">请填写下表，销售团队会尽快与您联系（演示表单，提交会发送到 Salesforce Web-to-Lead）。</p>
+
+      <!-- Salesforce Web-to-Lead form -->
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdM00000X8nIK" method="POST" accept-charset="UTF-8">
+        <!-- required hidden fields -->
+        <input type="hidden" name="oid" value="00DdM00000X8nIK">
+        <input type="hidden" name="retURL" value="https://wangjuneva082828-maker.github.io/test/docs/thanyou.html">
+
+        <div>
+          <label for="salutation">称谓 (Salutation)</label>
+          <select id="salutation" name="salutation">
+            <option value="">-- 请选择 --</option>
+            <option>Mr.</option>
+            <option>Ms.</option>
+            <option>Mrs.</option>
+            <option>Dr.</option>
+            <option>Prof.</option>
+            <option>Mx.</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="first_name">姓 (First name) <span style="color:#f43f5e">*</span></label>
+          <input id="first_name" name="first_name" type="text" maxlength="40" required>
+        </div>
+
+        <div>
+          <label for="last_name">名 (Last name) <span style="color:#f43f5e">*</span></label>
+          <input id="last_name" name="last_name" type="text" maxlength="80" required>
+        </div>
+
+        <div>
+          <label for="email">电子邮件 (Email) <span style="color:#f43f5e">*</span></label>
+          <input id="email" name="email" type="email" maxlength="80" required>
+        </div>
+
+        <div>
+          <label for="company">公司 (Company)</label>
+          <input id="company" name="company" type="text" maxlength="40">
+        </div>
+
+        <div>
+          <label for="phone">电话 (Phone)</label>
+          <input id="phone" name="phone" type="text" maxlength="40">
+        </div>
+
+        <div>
+          <label for="country">国家 (Country)</label>
+          <input id="country" name="country" type="text" maxlength="40">
+        </div>
+
+        <div class="full">
+          <label for="description">需求描述 (Description)</label>
+          <textarea id="description" name="description" maxlength="2000" placeholder="请简单描述您的需求、预算或期望时间节点..."></textarea>
+        </div>
+
+        <div class="full actions">
+          <button class="btn" type="submit">提交申请</button>
+          <button type="reset" class="btn secondary">重置</button>
+          <div style="margin-left:auto" class="note">提交后将跳转到谢谢页面</div>
+        </div>
+      </form>
+
+      <p style="margin-top:14px;font-size:13px;color:var(--muted)">这是一个演示表单。若需要测试调试，可以在表单中添加隐藏的 debug 字段（`debug` & `debugEmail`）。</p>
+    </main>
+  </body>
+</html>
